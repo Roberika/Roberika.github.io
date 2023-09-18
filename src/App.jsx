@@ -1,44 +1,33 @@
-import { useEffect, useState, useNavigate } from 'react'
-import axios from 'axios';
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './pages/Home.jsx'
-import Tugas1 from './pages/Tugas1.jsx'
-import Tugas2 from './pages/Tugas2.jsx'
-import Tugas3A from './pages/Tugas3A.jsx'
-import Tugas3B from './pages/Tugas3B.jsx'
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/calc' element={<Tugas1 />} />
-            <Route path='/tugas2' element={<Tugas2 />} />
-            <Route path='/prodi' element={<Tugas3A />} />
-            <Route path='/mahasiswa/:npm' element={<Tugas3B />} />
-          </Routes>
-        </BrowserRouter>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-
-      <br /><hr />
-      <ul className="read-the-docs references">
-        References:
-        <li><a href='https://stackoverflow.com/questions/51576155/pass-a-variable-reference-in-react'>Trick to change default set behaviour</a></li>
-        <li><a href='https://react.dev/learn/thinking-in-react'>Input and OnChange</a></li>
-        <li><a href='https://stackoverflow.com/questions/54002792/in-general-is-it-better-to-use-one-or-many-useeffect-hooks-in-a-single-component'>Multiple useEffect</a></li>
-        <li><a href='https://stackoverflow.com/questions/40803828/how-can-i-map-through-an-object-in-reactjs'>Mapping Objects</a></li>
-        <li><a href='https://stackoverflow.com/questions/37571418/reactnative-how-to-center-text'>React Styling</a></li>
-        <li><a href='https://ui.dev/react-router-url-parameters'>Route Parameters</a></li>
-        <li><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find'>Array Find</a></li>
-        <li><a href='https://css-tricks.com/run-useeffect-only-once/'>Run useEffect Just Once</a></li>
-        <li><a href=''>...</a></li>
-      </ul>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   )
 }
