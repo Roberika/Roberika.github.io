@@ -6,6 +6,10 @@ j {
   @apply border
 }
 
+*, :after, :before {
+  @apply box-border m-0
+}
+
 .app {
   @apply w-11/12 mx-auto
 }
@@ -15,29 +19,10 @@ j {
 }
 
 .card {
-  @apply border-red-500 h-40 flex flex-col justify-end relative
+  @apply border-red-500
   transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300 hover:shadow-2xl
 }
 
-.card:hover .card-caption {
-  @apply visible border-red-500 z-20 bg-gradient-to-t  
-  from-transparent via-20% to-transparent text-xs 
-
-  via-slate-300 text-slate-900  
-}
-
-.card-caption {
-  @apply invisible px-3
-}
-
-.text-unfinished {
-  @apply via-slate-900 text-slate-300
-}
-
 .card-image {
-  @apply border-red-500 overflow-hidden absolute inset-0 z-10
-}
-
-.card-image img {
-  @apply border-red-500 w-full h-full
+  @apply border-red-500 w-full overflow-clip size-fit 
 }
